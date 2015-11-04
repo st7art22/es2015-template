@@ -5,7 +5,11 @@ var util = require('gulp-util');
 var buffer = require('vinyl-buffer');
 var source = require('vinyl-source-stream');
 var uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
+
 var browserSync = require('browser-sync');
+
+var gulp = require('gulp');
 var jade = require('gulp-jade');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
@@ -54,13 +58,12 @@ gulp.task('build:bower', function() {
 
 gulp.task('scripts', function(){
   browserify('./src/scripts/index.js', { debug: true })
-    .transform(babelify)
-    .bundle()
+    .transform("babelify", {presets: ["es2015"]}).bundle()
     .on('error', util.log.bind(util, 'Browserify Error'))
     .pipe(source('index.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
-    //.pipe(uglify({ mangle: false }))
+    .pipe(uglify({ mangle: false }))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./public'));
 });
