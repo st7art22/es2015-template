@@ -1,0 +1,22 @@
+{
+  "name": "jsmeetupbarnaul_es6",
+  "description": "ERROR: No README data found!",
+  "main": "",
+  "authors": [
+    "Dmitry_Pavlov"
+  ],
+  "license": "BSD",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.2.3",
+    "EaselJS": "easeljs#~0.8.1"
+  }
+}
