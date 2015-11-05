@@ -32,8 +32,9 @@ var config = {
       baseDir: "./public"
     },
     watchOptions: {debounceDelay: 1000},
-    tunnel: true,
+    tunnel: false,
     host: 'localhost',
+
     port: 9999,
     logPrefix: "BrowserSync:"
 };
@@ -57,7 +58,7 @@ gulp.task('build:bower', function() {
 });
 
 gulp.task('scripts', function(){
-  browserify('./src/scripts/index.js', { debug: true })
+  return browserify('./src/scripts/index.js', { debug: true })
     .transform("babelify", {presets: ["es2015"]}).bundle()
     .on('error', util.log.bind(util, 'Browserify Error'))
     .pipe(source('index.js'))

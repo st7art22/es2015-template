@@ -4,8 +4,18 @@ html
     meta( content = "IE=edge, chrome=1" http-equiv = "X-UA-Compatible")
     meta( content = "width=device-width, initial-scale=1" name = "viewport")
     title JSMeetup Barnaul
+    link( type = "text/css" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"  rel = "stylesheet")
     link( type = "text/css" href = "main.css"  rel = "stylesheet")
     link( rel="shortcut icon" href="favicon.png")
     script( src="vendor.js" )
-    script( src="index.js" )
+    script( src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" )
   body
+    #container
+    script( type="text/template", id="form" )
+        <form action="<%= action %>"></form>
+    script( type="text/template", id="input" )
+        <input class="form-control" placeholder="<%= placeholder %>" name="<%= name %>" type="<%= type %>" value="<%= value %>"></input>
+    script( type="text/template", id="textarea" )
+        <textarea class="form-control" placeholder="<%= placeholder %>" name="<%= name %>" value="<%= value %>"></textarea>
+
+    script( src="index.js" )
