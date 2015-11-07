@@ -6,11 +6,11 @@
     "url": ""
   },
   "dependencies": {
+    "babel-preset-es2015": "^6.1.2",
     "gulp": "^3.9.0"
   },
   "description": "ERROR: No README data found!",
   "devDependencies": {
-    "6to5": "^3.6.5",
     "babelify": "^7.2.0",
     "browser-sync": "^2.9.11",
     "browserify": "^12.0.1",
