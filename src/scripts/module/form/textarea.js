@@ -6,10 +6,8 @@ import Input from './input.js'
 
 export default class Textarea extends Input {
 
-  constructor(options) {
-    super(options);
-
-    this.template = _.template($('#textarea').html());
+  get template() {
+    return _.template($('#textarea').html());
   }
 
 }

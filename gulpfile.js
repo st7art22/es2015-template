@@ -9,11 +9,9 @@ var sourcemaps = require('gulp-sourcemaps');
 
 var browserSync = require('browser-sync');
 
-var gulp = require('gulp');
 var jade = require('gulp-jade');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
-var sourcemaps = require('gulp-sourcemaps');
 
 var mainBowerFiles = require('main-bower-files');
 

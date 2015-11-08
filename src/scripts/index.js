@@ -7,7 +7,7 @@ var { Model, View, Collection, Router, LocalStorage } = Backbone;
 import Form from './module/form.js'
 
 var form = new Form({
-  model: new Model({
+  model: new Form.Model({
     action: "/contacts",
     fields: {
       company: { name: "company", placeholder: "Компания",    type: "text",     validate: {required: true} },

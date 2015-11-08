@@ -18,37 +18,34 @@ const TYPES = {
 
 export default class Form extends Backbone.View {
 
-  constructor(options) {
-    super(options);
-    this.template = _.template($('#form').html());
+  get template() {
+    return _.template($('#form').html());
+  }
+
+  static get Model() {
+    return FormModel;
   }
 
   render() {
     this.$el.html(this.template(this.model.toJSON()));
 
-    // =>, let
     _.each(this.model.get('fields'), field => {
-      let View = TYPES[field.type];
+      var View = TYPES[field.type];
       if (!View) return;
 
-      let view = new View({model: new FieldModel(field)});
+      var view = new View({model: new View.Model(field)});
       this.$el.append(view.render().el);
     });
+
     return this;
   }
 
 }
 
-class FieldModel extends Backbone.Model {
+class FormModel extends Backbone.Model {
 
-  defaults() {
-    return {
-      name: "",
-      placeholder: "",
-      type: "",
-      validate: "",
-      value: ""
-    };
+  get url() {
+    return "/";
   }
 
 }
